@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FCC: Product Landing Page</title>
+    <style>
+      
+           body {
+            font-family: 'Lato', sans-serif;
+            background-color: #EEE;
+           }
+           body * + * {
+            margin-top: 1.5em;
+           }
+        
+            header {
+                margin: 0;
+                min-height: 75px;
+                position: fixed;
+               top: 0;
+               margin-top: 0;
+                
+            }
+           
+           
+           .site-nav {
+               display: flex;
+               padding-left: .5em;
+               list-style-type: none;
+               width: 100%;
+               background-color: #EEE;
+               position: fixed;
+               top: 0;
+               margin-top: 0;
+               
+           }
+
+           .site-nav > li {
+            margin-top: 0;
+           }
+
+           .site-nav > li > a {
+               color: black;
+               text-decoration: none;
+               padding: 2em 4em;
+           }
+
+           .site-nav > li + li {
+            margin-left: 1.5em;
+           }
+
+           .site-nav > .nav-right {
+            margin-left: auto;
+           }
+
+           #header-img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+        }
+
+        .cto {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 200px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            display: block;
+            font-weight: bold;
+        }
+        
+
+        input[type="email"] {
+            max-width: 275px;
+            width: 100%;
+            padding: 5px;
+        }
+
+        input[type="submit"] {
+            max-width: 150px;
+            width: 100%;
+            height: 30px;
+            margin: 15px 0;
+            border: 0;
+            
+        }
+
+        .btn {
+            font-size: 1em;
+            font-weight: 900;
+            text-transform: uppercase;
+            border-radius: 2px;
+            cursor: pointer;
+            background-color: #f1c40f;
+            
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        #features {
+            margin-top: 30px;
+        }
+
+        #how-it-works {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .grid {
+            display: flex;
+        }
+        
+        #features .icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 125px;
+            width: 20vw;
+            color: darkorange;
+        }
+
+        #features .items {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 125px;
+            width: 80vw;
+            padding: 5px;
+        }
+
+        .product {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: calc(100% / 3);
+            margin: 10px;
+            border: 1px solid #000;
+            border-radius: 3px;
+        }
+
+        .product > .level {
+            background-color: #ddd;
+            color: black;
+            padding: 15px 0;
+            width: 100%;
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        .product > button {
+            border: 0;
+            margin: 15px 0;
+            background-color: #f1c40f;
+            font-weight: 400;
+            padding: 20px 40px;
+        }
+
+        .product > button:hover {
+            background-color: darkorange;
+            color: #fff;
+            font-weight: 200;
+        }
+
+        #pricing {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        footer {
+            background-color: #ddd;
+        }
+        
+        .footer-links {
+            list-style: none;
+            list-style-type: none;
+        }
+
+
+       
+        @media (min-width: 450px) {
+            body { margin: 0}
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header id="header">
+        <nav id="nav-bar">
+            <ul class="site-nav">
+                <li class="">
+                    <a href=""><img src="https://s3.amazonaws.com/freecodecamp/original_trombones.png" alt="" id="header-img" /></a>                    
+                </li>
+                <li class="nav-right"><a href="#features" class="nav-link">Features</a></li>
+                <li class=""><a href="#how-it-works" class="nav-link">How it works</a></li>
+                <li class=""><a href="#pricing" class="nav-link">Pricing</a></li>
+            </ul>
+           
+        </nav>
+    </header>
+    <main>
+        <section class="cto">
+            <h1>Handcrafted, home-made masterpiece</h1>
+            <form id="form" action="https://www.freecodecamp.com/email-submit">
+                <input type="email" name="email" required id="email" placeholder="Enter your email address"/>
+                <input type="submit" id="submit" class="btn" value="get started"></input>
+            </form>
+        </section>
+        <div class="container">
+            <section id="features">
+                <section id="features">
+                    <div class="grid">
+                        <div class="icon"><i class="fa fa-3x fa-fire"></i></div>
+                        <div class="items">
+                            <h2>Premium Materials</h2>
+                            <p>
+                                Our trombones use the shiniest brass which is sourced locally. This
+                                will increase the longevity of your purchase.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="icon"><i class="fa fa-3x fa-truck"></i></div>
+                        <div class="items">
+                            <h2>Fast Shipping</h2>
+                            <p>
+                            We make sure you recieve your trombone as soon as we have finished
+                            making it. We also provide free returns if you are not satisfied.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="grid">
+                        <div class="icon">
+                            <i class="fa fa-3x fa-battery-full" aria-hidden="true"></i>
+                        </div>
+                        <div class="items">
+                            <h2>Quality Assurance</h2>
+                            <p>
+                                For every purchase you make, we will ensure there are no damages or
+                                faults and we will check and test the pitch of your instrument.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            <section id="how-it-works">
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/y8Yv4pnO7qc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>
+            <section id="pricing">
+                <div class="product" id="tenor">
+                    <div class="level">Tenor Trombone</div>
+                    <h2>$600</h2>
+                    <ol>
+                        <li>Lorem ipsum.</li>
+                        <li>Lorem ipsum.</li>
+                        <li>Lorem ipsum dolor.</li>
+                        <li>Lorem ipsum.</li>
+                    </ol>
+                    <button class="btn">Select</button>
+                </div>
+                <div class="product" id="bass">
+                    <div class="level">Bass Trombone</div>
+                    <h2>$900</h2>
+                    <ol>
+                        <li>Lorem ipsum.</li>
+                        <li>Lorem ipsum.</li>
+                        <li>Lorem ipsum dolor.</li>
+                        <li>Lorem ipsum.</li>
+                    </ol>
+                    <button class="btn">Select</button>
+                </div>
+                <div class="product" id="valve">
+                    <div class="level">Valve Trombone</div>
+                    <h2>$1200</h2>
+                    <ol>
+                        <li>Plays similar to a Trumpet</li>
+                        <li>Great for Jazz Bands</li>
+                        <li>Lorem ipsum dolor.</li>
+                        <li>Lorem ipsum.</li>
+                    </ol>
+                    <button class="btn">Select</button>
+                </div>
+            </section>
+            <footer>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="#">Terms</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <span>Copyright 2016, Original Trombones</span>
+            </footer>
+        </div>
+    </main>
+</body>
+</html>
+
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
