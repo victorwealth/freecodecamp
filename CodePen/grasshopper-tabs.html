@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grasshopper Tabs</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" class="jsx-312043122 next-head">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto:400,400i,700" rel="stylesheet" class="jsx-312043122 next-head">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #00324B;
+        }
+
+        #parent-flex {
+            /*background-color: #00324B; */
+            display: flex;
+            color: #869EB0;
+            width: 70%;
+            max-height: 44.4px;
+            
+            font-family: Roboto Mono;
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .tabs {
+            /*border-right: 1.5px solid #00324B;*/
+            cursor: pointer;
+            margin-right: 1px;
+        }
+
+            /* .child-flex-1 .tabs:hover{
+            background-color: #00324B;
+            border: none;
+            color: #fff;
+            } */
+
+        .ico {
+            border-right: 1px solid #00324B;
+        }
+        .child-flex-1 {
+            display: flex;
+            width: 70%;
+            
+        }
+
+            .child-flex-1 .tabs {
+            padding: 13px 50px;
+            background-color: #144862;
+            margin-right: 1.5px;
+            }
+
+            #empty-space {
+            width: 45%;
+            background-color: #144862;
+            }
+
+            .child-flex-1 .ico {
+            background-color: #144862;
+            margin-right: 1.5px;
+            padding-right: 15px;
+            padding-left: 15px;
+            text-align: center;
+            }
+
+            img {
+            margin-top: 10px;
+            width: 28px;
+            height: auto;
+            
+            }
+
+            .child-flex-2 {
+            display: flex;
+            width: 30%;
+            justify-content: flex-end;
+            background-color: #144862; 
+            }
+
+            .child-flex-2 .guide p {
+            border-radius: 100px;
+            margin-right: 0;
+            margin-top: 7px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border: 1px solid #869EB0;
+            }
+
+            .child-flex-2 .setting {
+            padding: 9px 10px;
+            }
+
+            #editor {
+            background-color: #00324B;
+            height: 100vh;
+            width: 69.5%;
+            border: 0.5px solid #144862;
+            border-top: none;
+            padding: 3px;
+            }
+
+            #editor textarea {
+            background: transparent;
+            height: 100vh;
+            width: 99.5%;
+            border: none;
+            overflow: none;
+            resize: none;
+            box-shadow: none;
+            outline: none;
+            color: #fff;
+            display: none;
+            }
+    </style>
+</head>
+<body>
+    <div id="parent-flex">
+      
+      <div class="child-flex-1">
+        <div class="ico">
+         <img src="https://learn.grasshopper.app/static/grasshopperIcon.svg" alt="learn.grasshopper.app image"/>
+        </div>
+        <div class="tabs js-tab">js</div>
+        <div class="tabs html-tab">html</div>
+        <div class="tabs css-tab">css</div>
+        <div id="empty-space"></div>
+      </div>
+      
+      <div class="child-flex-2">
+        <div class="guide"><p>Guide</p></div>
+        <div class="setting">...</div>
+      </div>
+      
+    </div>
+<div id="editor">
+  <textarea id="js-tab">JS text area</textarea>
+  <textarea id="html-tab">HTML textarea</textarea>
+  <textarea id="css-tab">CSS textarea</textarea>
+</div>
+</body>
+</html>
+<script>
+    
+window.onclick = function(e){ // listens to click event on the page
+  if (e.srcElement.classList[0] === 'tabs'){
+    
+    // reset background and color to it's original
+    // also hide all textarea
+    let tabs = document.querySelectorAll('.tabs');
+    for (let i = 0; i < tabs.length; i++){
+      tabs[i].style.backgroundColor = '#144862';
+      tabs[i].style.color = '#869EB0';
+
+      document.getElementById(`${tabs[i].classList[1]}`).style.display = 'none';
+    }
+    
+    // change bg and text color of selected element
+    // also show its textarea
+    let selectedTab = e.srcElement.classList[1];
+    selectedTab = document.querySelector(`.${selectedTab}`);
+    selectedTab.style.backgroundColor = '#00324B';
+    selectedTab.style.color = '#fff';
+    
+    document.getElementById(`${e.srcElement.classList[1]}`).style.display = 'block';
+    
+  }
+  //console.log(e);
+}; 
+
+</script>
